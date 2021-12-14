@@ -10,6 +10,8 @@ package com.ji.injector;
  */
 public class Main {
     
+    private static final String version = "0.1";
+    
     public static void main(String[] args) {
         System.out.println("[INJECTOR] i am alive");
     }
