@@ -4,8 +4,11 @@
  */
 package com.ji.injector.free.classes.easy.table;
 
+import com.ji.injector.headquarter.Exercise;
+import com.ji.injector.headquarter.ExerciseType;
+
 /**
- *
+ * F.1-TABLE
  * Inserire come attributi privati una stringa per il 'name' del tavolo e due 
  * interi, uno per la 'width' e l'altro per la 'height'. 
  * Si crei (senza usare le shortcut) il costruttore vuoto, uno con tutti gli
@@ -15,6 +18,7 @@ package com.ji.injector.free.classes.easy.table;
  * il parametro si prova a settare null, il 'name' sia "INVALID". 
  * @author sommovir
  */
+@Exercise(name = "F.1-TABLE", type = ExerciseType.FREE)
 public class Table {
     
 }
