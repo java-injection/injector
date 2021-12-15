@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ji.injector.auto.incapsulamento.medium.book;
+package com.ji.injector.exercise.incapsulamento.medium.book;
 
 /**
  * Esercizio 2.A

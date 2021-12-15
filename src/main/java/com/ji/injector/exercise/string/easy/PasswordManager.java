@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ji.injector.auto.string.easy;
+package com.ji.injector.exercise.string.easy;
 
 /**
  * Esercizio 1.A

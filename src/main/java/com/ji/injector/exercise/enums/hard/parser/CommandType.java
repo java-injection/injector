@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ji.injector.free.enums.hard.parser;
+package com.ji.injector.exercise.enums.hard.parser;
 
 /**
  * ESERCIZIO 3.C.8
