@@ -29,7 +29,6 @@ public class Lesson3EUnitTest {
     private String message;
     private String result;
     private static float vote = 0;
-    
     private static final String INVALID = "INVALID";
 
     public Lesson3EUnitTest() {
