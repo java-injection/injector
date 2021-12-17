@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.TestInfo;
@@ -20,7 +21,7 @@ import org.junit.jupiter.api.TestMethodOrder;
  *
  * @author sommovir
  */
-//@Disabled
+@Disabled
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 public class Lesson3TUTORUnitTest {
 
