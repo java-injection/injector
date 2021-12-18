@@ -20,5 +20,5 @@ import com.ji.injector.headquarter.ExerciseType;
  */
 @Exercise(name = "F.1-TABLE", type = ExerciseType.FREE)
 public class Table {
-    
+
 }

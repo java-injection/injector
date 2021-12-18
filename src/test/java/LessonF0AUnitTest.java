@@ -8,7 +8,9 @@
 
 import com.ji.injector.exercise.classes.easy.monster.Monster;
 import com.ji.injector.exercise.string.easy.password.PasswordManager;
+import com.ji.injector.headquarter.Exercise;
 import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.logging.Level;
@@ -30,7 +32,15 @@ public class LessonF0AUnitTest {
     private String message;
     private String result;
     private static float vote = 0;
-    private static PasswordManager pm = null;
+    private static final String title;
+    public static final String UNKNOWN_EXERCIZE = "<UNKNOWN EXERCIZE>";
+    private static boolean brutalityExisting = false;
+    private Field fieldBrutality = null;
+    
+    static{
+        Exercise annotation = Monster.class.getAnnotation(Exercise.class);
+        title = annotation == null ? UNKNOWN_EXERCIZE : annotation.name();
+    }
 
     public LessonF0AUnitTest() {
     }
@@ -43,7 +53,7 @@ public class LessonF0AUnitTest {
 
     @org.junit.jupiter.api.BeforeAll
     public static void setUpClass() throws Exception {
-        pm = new PasswordManager();
+        
     }
 
     @org.junit.jupiter.api.AfterAll
@@ -60,38 +70,57 @@ public class LessonF0AUnitTest {
 
     @org.junit.jupiter.api.BeforeEach
     public void setUp() throws Exception {
-         pm = new PasswordManager();
     }
 
     @org.junit.jupiter.api.AfterEach
     public void tearDown() throws Exception {
-        System.out.println("[Test Module][Lesson1]" + message + ": " + result);
+        System.out.println("[Test Module][Classi e Oggetti]" + message + ": " + result);
 
     }
 
     @Test
-    @DisplayName("[1.A.1](1/1) Easy: getMaxAttempts [getter]")
+    @DisplayName("(1/1) Easy: attributo brutality [existence]")
     public void test1a1(TestInfo info) {
 
-        message = info.getDisplayName();
-        result = "\t\t\t\t[FAIL]";
-
-        
+        message = "["+title+"]"+info.getDisplayName();
+        result = "\t[FAIL]";
         try {
-            Field field = Monster.class.getDeclaredField("brutality");
-            Assertions.assertNotNull(field);
+            fieldBrutality= Monster.class.getDeclaredField("brutality");
+            Assertions.assertNotNull(fieldBrutality);
+            brutalityExisting = true;
         } catch (NoSuchFieldException ex) {
-            Logger.getLogger(LessonF0AUnitTest.class.getName()).log(Level.SEVERE, null, ex);
+           return;
         } catch (SecurityException ex) {
-            Logger.getLogger(LessonF0AUnitTest.class.getName()).log(Level.SEVERE, null, ex);
+           return;
         }
-       
-//        assertEquals(3, maxa,"Mi aspettavo che il numero massimo di tentativi fosse 3, invece mi hai restituito "+maxa);
 
-        result = "\t\t\t\t[SUCCESS][+5.0]";
+        result = "\t[SUCCESS][+5.0]";
         vote += 5.0f;
     }
     
+    
+    @Test
+    @DisplayName("(1/1) Easy: attributo brutality [private]")
+    public void test1a2(TestInfo info) {
+        message = "["+title+"]"+info.getDisplayName();
+        result = "\t\t[SKIPPED]";
+        Assumptions.assumeTrue(brutalityExisting);
+        result = "\t\t[FAIL]";
+        try {
+            fieldBrutality= Monster.class.getDeclaredField("brutality");
+            int modifiers = fieldBrutality.getModifiers();
+            Assertions.assertTrue(Modifier.isPrivate(modifiers), "la variabile brutality non ha accesso privato.");
+            brutalityExisting = true;
+        } catch (SecurityException ex) {
+           return;
+        } catch (NoSuchFieldException ex) {
+            return;
+        }
+        
+
+        result = "\t\t[SUCCESS][+5.0]";
+        vote += 5.0f;
+    }
     
 
    
