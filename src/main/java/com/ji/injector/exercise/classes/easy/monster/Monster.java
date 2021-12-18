@@ -19,7 +19,7 @@ import com.ji.injector.headquarter.ExerciseType;
 public class Monster {
     
 
-    private int brutality = 3;
+    private int brutality = 2;
     
     public String nome;
     
