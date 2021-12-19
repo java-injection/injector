@@ -19,7 +19,7 @@ import com.ji.injector.headquarter.ExerciseType;
  *    con nome-> "Autore" e cognome -> "Sconosciuto". 
  * @author Luca
  */
-@Exercise(name = "F.0-MONSTER", type = ExerciseType.AUTO)
+@Exercise(name = "2.A-BOOK", type = ExerciseType.AUTO)
 @ExecutingTest(enabled = false)
 public class Book {
     
