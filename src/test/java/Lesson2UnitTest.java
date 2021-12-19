@@ -292,7 +292,7 @@ public class Lesson2UnitTest {
         assertEquals("Autore", book.getAuthor().getName(), "Non è stato gestito il settaggio di un autore con attributi vuoti [name]");
         assertEquals("Sconosciuto", book.getAuthor().getSurname(), "Non è stato gestito il settaggio di un autore con attributi vuoti [surname]");
         result = "\t[SUCCESS]";
-        vote += 3;
+        vote += 2;
     }
 
     @Test
@@ -307,7 +307,7 @@ public class Lesson2UnitTest {
         assertEquals("Autore", book.getAuthor().getName(), "Non è stato gestito il settaggio di un autore nullo");
         assertEquals("Sconosciuto", book.getAuthor().getSurname(), "Non è stato gestito il settaggio di un autore nullo");
         result = "\t\t[SUCCESS]";
-        vote += 3;
+        vote += 2;
     }
 
     @Test
@@ -323,4 +323,36 @@ public class Lesson2UnitTest {
         vote += 1;
     }
 
+    
+    @Test
+    @DisplayName("[Test incapsulamento](EXTRA) Hard: 2A.3 trying to hack author by setter")
+    public void test992(TestInfo info) {
+        message = info.getDisplayName();
+        result = "\t\t\t\t[FAIL]";
+        Author author = new Author("Federico", "Tiberi");
+        Book book = new Book("Promessi Sposi", 234, author);
+        author.setSurname("Cepilli");
+        author.setName("Alessio");
+        assertEquals("Federico", book.getAuthor().getName(), "Non è stato gestito l'eventuale hack esterno by setter");
+        assertEquals("Tiberi", book.getAuthor().getSurname(), "Non è stato gestito l'eventuale hack esterno by setter");
+        result = "\t\t\t\t[SUCCESS]";
+        vote += 1;
+    }
+    
+     @Test
+    @DisplayName("[Test incapsulamento](EXTRA) Hard: 2A.3 trying to hack author by getter")
+    public void test993(TestInfo info) {
+        message = info.getDisplayName();
+        result = "\t\t\t\t[FAIL]";
+        Author author = new Author("Federico", "Tiberi");
+        Book book = new Book("Promessi Sposi", 234, author);
+        Author a2 = book.getAuthor();
+        a2.setSurname("Cepilli");
+        a2.setName("Alessio");
+        assertEquals("Federico", book.getAuthor().getName(), "Non è stato gestito l'eventuale hack esterno by getter");
+        assertEquals("Tiberi", book.getAuthor().getSurname(), "Non è stato gestito l'eventuale hack esterno by getter");
+        result = "\t\t\t\t[SUCCESS]";
+        vote += 1;
+    }
+    
 }
