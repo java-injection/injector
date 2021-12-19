@@ -69,7 +69,9 @@ public class Book {
     }
 
     public Author getAuthor() {
-        return author;
+               
+        
+        return new Author(this.author.getName(), this.author.getSurname());
     }
 
     public void setAuthor(Author author) {
@@ -79,7 +81,7 @@ public class Book {
             author = new Author("Autore", "Sconosciuto");
 
         }
-        this.author = author;
+        this.author = new Author(author.getName(), author.getSurname());
     }
-
+    
 }
