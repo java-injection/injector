@@ -5,8 +5,9 @@
  */
 
 import com.ji.injector.exercise.classes.easy.monster.Monster;
-import com.ji.injector.exercise.string.easy.password.PasswordManager;
+
 import com.ji.injector.headquarter.Exercise;
+import com.ji.injector.headquarter.ConditionToExecute;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -28,6 +29,7 @@ import org.junit.jupiter.api.Disabled;
 
 //@Disabled
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+@ConditionToExecute(classToCheck = Monster.class)
 public class LessonF0AUnitTest {
 
     private String message;
@@ -46,6 +48,7 @@ public class LessonF0AUnitTest {
         Exercise annotation = Monster.class.getAnnotation(Exercise.class);
         title = annotation == null ? UNKNOWN_EXERCIZE : annotation.name();
     }
+
 
     public LessonF0AUnitTest() {
     }
