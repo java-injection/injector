@@ -5,7 +5,6 @@
  */
 package com.ji.injector.exercise.incapsulamento.medium.book;
 
-import com.ji.injector.headquarter.ExecutingTest;
 import com.ji.injector.headquarter.Exercise;
 import com.ji.injector.headquarter.ExerciseType;
 
@@ -19,8 +18,7 @@ import com.ji.injector.headquarter.ExerciseType;
  *    con nome-> "Autore" e cognome -> "Sconosciuto". 
  * @author Luca
  */
-@Exercise(name = "2.A-BOOK", type = ExerciseType.AUTO)
-@ExecutingTest(enabled = false)
+@Exercise(name = "2.A-BOOK", type = ExerciseType.AUTO, testEnabled = false)
 public class Book {
     
     private String title;
@@ -58,6 +56,6 @@ public class Book {
 
     }
     
-    
+
     
 }
