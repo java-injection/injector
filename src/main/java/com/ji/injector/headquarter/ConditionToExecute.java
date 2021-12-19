@@ -8,6 +8,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /**
  *
@@ -15,6 +16,7 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-public @interface ExecutingTest {
-    public boolean enabled() default true;
+@ExtendWith(RunnableTestCondition.class)
+public @interface ConditionToExecute {
+    public Class<?> classToCheck();
 }

@@ -8,7 +8,7 @@
 
 import com.ji.injector.exercise.incapsulamento.medium.book.Author;
 import com.ji.injector.exercise.incapsulamento.medium.book.Book;
-import com.ji.injector.headquarter.ExecutingTest;
+import com.ji.injector.headquarter.ConditionToExecute;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Disabled;
@@ -23,6 +23,7 @@ import org.junit.jupiter.api.TestMethodOrder;
  */
 //@Disabled
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+@ConditionToExecute(classToCheck = Book.class)
 public class Lesson2UnitTest {
 
     private String message;
@@ -34,10 +35,10 @@ public class Lesson2UnitTest {
 
     @org.junit.jupiter.api.BeforeAll
     public static void setUpClass() throws Exception {
-        ExecutingTest exeTest = Book.class.getDeclaredAnnotation(ExecutingTest.class);
-        if(!exeTest.enabled()){
+//        ExecutingTest exeTest = Book.class.getDeclaredAnnotation(ExecutingTest.class);
+//        if(!exeTest.enabled()){
 //            System.exit(0);
-        }
+//        }
     }
 
     @org.junit.jupiter.api.AfterAll
