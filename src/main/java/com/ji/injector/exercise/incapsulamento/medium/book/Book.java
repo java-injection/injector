@@ -5,6 +5,10 @@
  */
 package com.ji.injector.exercise.incapsulamento.medium.book;
 
+import com.ji.injector.headquarter.ExecutingTest;
+import com.ji.injector.headquarter.Exercise;
+import com.ji.injector.headquarter.ExerciseType;
+
 /**
  * Esercizio 2.A
  * 1. creare l'incapsulamente di questa classe generando il costruttore vuoto e quello con argomenti e tutti i metodi getter & setter
@@ -15,6 +19,8 @@ package com.ji.injector.exercise.incapsulamento.medium.book;
  *    con nome-> "Autore" e cognome -> "Sconosciuto". 
  * @author Luca
  */
+@Exercise(name = "F.0-MONSTER", type = ExerciseType.AUTO)
+@ExecutingTest(enabled = false)
 public class Book {
     
     private String title;

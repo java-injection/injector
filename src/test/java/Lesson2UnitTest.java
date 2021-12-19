@@ -8,6 +8,7 @@
 
 import com.ji.injector.exercise.incapsulamento.medium.book.Author;
 import com.ji.injector.exercise.incapsulamento.medium.book.Book;
+import com.ji.injector.headquarter.ExecutingTest;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Disabled;
@@ -20,7 +21,7 @@ import org.junit.jupiter.api.TestMethodOrder;
  *
  * @author sommovir
  */
-@Disabled
+//@Disabled
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 public class Lesson2UnitTest {
 
@@ -33,10 +34,18 @@ public class Lesson2UnitTest {
 
     @org.junit.jupiter.api.BeforeAll
     public static void setUpClass() throws Exception {
+        ExecutingTest exeTest = Book.class.getDeclaredAnnotation(ExecutingTest.class);
+        if(!exeTest.enabled()){
+            System.exit(0);
+        }
     }
 
     @org.junit.jupiter.api.AfterAll
     public static void tearDownClass() throws Exception {
+//        ExecutingTest exeTest = Book.class.getDeclaredAnnotation(ExecutingTest.class);
+//        if(!exeTest.enabled()){
+//            System.exit(0);
+//        }
         System.out.println("\n\n===========================================================");
         if (vote > 30) {
             System.out.println("\t\t\tYOUR VOTE: 30 e Lode !");
