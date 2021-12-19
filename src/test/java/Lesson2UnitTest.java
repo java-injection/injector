@@ -120,8 +120,8 @@ public class Lesson2UnitTest {
         message = info.getDisplayName();
         result = "\t[FAIL]";
         Author author = new Author("George", "Orwell");
-        Book book = new Book("1984", 312, author);
         author.setName("Osvaldo");
+        Book book = new Book("1984", 312, author);       
         assertEquals("Osvaldo", book.getAuthor().getName(), "Probabile problema i getter/setter nella classe Author ");
         result = "\t[SUCCESS]";
         vote += 1;
