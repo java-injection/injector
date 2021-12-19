@@ -36,7 +36,7 @@ public class Lesson2UnitTest {
     public static void setUpClass() throws Exception {
         ExecutingTest exeTest = Book.class.getDeclaredAnnotation(ExecutingTest.class);
         if(!exeTest.enabled()){
-            System.exit(0);
+//            System.exit(0);
         }
     }
 
