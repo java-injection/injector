@@ -19,5 +19,14 @@ import com.ji.injector.headquarter.ExerciseType;
  */
 @Exercise(name = "F.0-MONSTER", type = ExerciseType.FREE)
 public class Monster {
+    
+  private int brutality = 3;
+  
+  public String nome;
+  
+  public int roar( int x){
+      
+      return x*brutality;
+  }
 
 }
