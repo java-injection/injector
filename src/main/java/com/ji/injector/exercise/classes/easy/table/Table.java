@@ -6,6 +6,7 @@ package com.ji.injector.exercise.classes.easy.table;
 
 import com.ji.injector.headquarter.Exercise;
 import com.ji.injector.headquarter.ExerciseType;
+import com.ji.injector.headquarter.InProgress;
 
 /**
  * F.1-TABLE
@@ -18,6 +19,7 @@ import com.ji.injector.headquarter.ExerciseType;
  * il parametro si prova a settare null, il 'name' sia "INVALID". 
  * @author sommovir
  */
+@InProgress
 @Exercise(name = "F.1-TABLE", type = ExerciseType.FREE)
 public class Table {
 

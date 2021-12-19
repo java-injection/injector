@@ -8,23 +8,16 @@ import com.ji.injector.headquarter.Exercise;
 import com.ji.injector.headquarter.ExerciseType;
 
 /**
- * [1] aggiungere un attributo privato di nome brutality e di tipo intero
- *     e inizializzarlo a 3
- * [2] aggiungere un attributo nome di tipo stringa, con specificatore pubblico. 
- * [3] aggiungere un metodo publico 'print' che accetta in input un intero x e
- *     restituisce in output x*brutality. 
+ * [1] aggiungere un attributo privato di nome 'brutality' e di tipo intero e
+ * inizializzarlo a 3 
+ * [2] aggiungere un attributo 'nome' di tipo stringa, con
+ * specificatore pubblico. 
+ * [3] aggiungere un metodo publico 'roar' che accetta
+ * in input un intero x e restituisce in output x*brutality.
+ *
  * @author Luca
  */
 @Exercise(name = "F.0-MONSTER", type = ExerciseType.FREE)
 public class Monster {
-    
 
-    private int brutality = 2;
-    
-    public String nome;
-    
-    public int print(int x){
-        return this.brutality * x;
-    }
-    
 }
