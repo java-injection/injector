@@ -16,7 +16,7 @@ import com.ji.injector.headquarter.ExerciseType;
  *
  * @author Luca
  */
-@Exercise(name = "F.0-MONSTER", type = ExerciseType.FREE)
+@Exercise(name = "F.0-MONSTER", type = ExerciseType.FREE, testEnabled = false)
 public class Monster {
 
     private int brutality = 3;
