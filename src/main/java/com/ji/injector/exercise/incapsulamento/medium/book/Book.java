@@ -9,31 +9,30 @@ import com.ji.injector.headquarter.Exercise;
 import com.ji.injector.headquarter.ExerciseType;
 
 /**
- * Esercizio 2.A 
- * 1. creare l'incapsulamente di questa classe generando il
+ * Esercizio 2.A 1. creare l'incapsulamente di questa classe generando il
  * costruttore vuoto e quello con argomenti e tutti i metodi getter & setter
- * sistemando tutti quelli già in essere che contengono vari errori. 
- * 2. se viene
+ * sistemando tutti quelli già in essere che contengono vari errori. 2. se viene
  * inserito un numero di pagine negativo o pari a zero, qualunque sia il numero,
- * sovrascriverlo con -1 
- * 3. se non viene esplicitamente settato l'autore o viene
+ * sovrascriverlo con -1 3. se non viene esplicitamente settato l'autore o viene
  * inserito un autore incompleto (stringhe vuote o null) di nome o cognome o
  * passato un valore null, inserire un autore di default con nome-> "Autore" e
  * cognome -> "Sconosciuto".
  *
  * @author Luca
  */
-
-@Exercise(name = "2.A-BOOK", type = ExerciseType.AUTO, testEnabled = false)
+@Exercise(name = "2.A-BOOK", type = ExerciseType.AUTO, testEnabled = true)
 public class Book {
 
     private String title;
     private int pages;
     private Author author;
+    public final int INVALIDPAGES = -1;
+    public final static String NO_AUTHOR_NAME = "Autore";
+    public final static String NO_AUTHOR_SURNAME = "Sconosciuto";
 
     public Book() {
 
-        author = new Author("Autore", "Sconosciuto");
+        author = new Author(NO_AUTHOR_NAME, NO_AUTHOR_SURNAME);
     }
 
     public Book(String title, int pages, Author author) {
@@ -60,15 +59,15 @@ public class Book {
 
         if (pages <= 0) {
 
-            pages = -1;
+            pages = INVALIDPAGES;
 
         }
         this.pages = pages;
     }
 
     public Author getAuthor() {
-               
-        
+
+        // ESEMPIO BEFORE HACK SOLUTION return this.author;
         return new Author(this.author.getName(), this.author.getSurname());
     }
 
@@ -76,10 +75,14 @@ public class Book {
 
         if (author == null || author.getName() == null || author.getSurname() == null || author.getName().isEmpty() || author.getSurname().isEmpty()) {
 
-            author = new Author("Autore", "Sconosciuto");
+            this.author = new Author(NO_AUTHOR_NAME, NO_AUTHOR_SURNAME);
+
+        } else {
+
+            this.author = new Author(author.getName(), author.getSurname());
+            // ESEMPIO BEFORE HACK SOLUTION this.author = author;
 
         }
-        this.author = new Author(author.getName(), author.getSurname());
     }
-    
+
 }
