@@ -6,7 +6,9 @@
 
 
 
+import com.ji.injector.exercise.list.easy.treno.Treno;
 import com.ji.injector.exercise.string.easy.morder.MilitaryOrder;
+import com.ji.injector.headquarter.ConditionToExecute;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import org.junit.jupiter.api.Test;
@@ -23,6 +25,7 @@ import org.junit.jupiter.api.TestMethodOrder;
  */
 @Disabled
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+@ConditionToExecute(classToCheck = MilitaryOrder.class)
 public class Lesson3TUTORUnitTest {
 
     private static final String INVALID = "INVALID";

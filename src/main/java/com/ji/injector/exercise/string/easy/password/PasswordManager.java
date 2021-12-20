@@ -5,6 +5,9 @@
  */
 package com.ji.injector.exercise.string.easy.password;
 
+import com.ji.injector.headquarter.Exercise;
+import com.ji.injector.headquarter.ExerciseType;
+
 /**
  * Esercizio 1.A
  * 1. Completare i seguenti metodi di modo che inserendo una password usando 
@@ -14,6 +17,7 @@ package com.ji.injector.exercise.string.easy.password;
  *    aggiungere nuovi metodi e nuovi attributi se necessari. 
  * @author Luca
  */
+@Exercise(name = "1A-PASSWORD", type = ExerciseType.AUTO, testEnabled = false)
 public class PasswordManager {
     
     private static final String correctPassword = "antisgamo";

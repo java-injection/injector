@@ -5,6 +5,8 @@
  */
 package com.ji.injector.exercise.list.easy.treno;
 
+import com.ji.injector.headquarter.Exercise;
+import com.ji.injector.headquarter.ExerciseType;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -15,6 +17,7 @@ import java.util.List;
  * metodi sottostanti. 
  * @author sommovir
  */
+@Exercise(name = "3E - TRENO", type = ExerciseType.AUTO, testEnabled = false)
 public class Treno {
 
     private String nome;

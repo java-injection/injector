@@ -5,6 +5,9 @@
  */
 package com.ji.injector.exercise.string.easy.morder;
 
+import com.ji.injector.headquarter.Exercise;
+import com.ji.injector.headquarter.ExerciseType;
+
 /**
  * 3 BASIC 2 Completare l'incapsulamento di questa classe secondo queste
  * specifiche: 
@@ -33,6 +36,7 @@ package com.ji.injector.exercise.string.easy.morder;
  *
  * @author sommovir
  */
+@Exercise(name = "B2-MORDER", type = ExerciseType.AUTO, testEnabled = false)
 public class MilitaryOrder {
 
     private String commander;

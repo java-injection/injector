@@ -8,6 +8,7 @@
 
 import com.ji.injector.exercise.string.easy.personcina.Personcina;
 import com.ji.injector.exercise.string.medium.account.RegistrationManager;
+import com.ji.injector.headquarter.ConditionToExecute;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import org.junit.jupiter.api.Test;
@@ -25,6 +26,7 @@ import org.junit.jupiter.api.TestMethodOrder;
  */
 @Disabled
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+@ConditionToExecute(classToCheck = Personcina.class)
 public class Lesson3BASICUnitTest {
 
     private static final String NO_NAME = "NO_NAME";

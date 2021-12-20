@@ -4,10 +4,14 @@
  */
 package com.ji.injector.exercise.patterns.builder.easy.soldier;
 
+import com.ji.injector.headquarter.Exercise;
+import com.ji.injector.headquarter.ExerciseType;
+
 /**
  *  
  * @author sommovir
  */
+@Exercise(name = "F3-SOLDIER", type = ExerciseType.AUTO, testEnabled = false)
 public class Soldier {
     
     private String name;

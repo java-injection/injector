@@ -5,8 +5,10 @@
  */
 
 
+import com.ji.injector.exercise.string.easy.password.PasswordManager;
 import com.ji.injector.exercise.string.medium.account.Account;
 import com.ji.injector.exercise.string.medium.account.RegistrationManager;
+import com.ji.injector.headquarter.ConditionToExecute;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
@@ -24,6 +26,7 @@ import org.junit.jupiter.api.TestMethodOrder;
  */
 @Disabled
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+@ConditionToExecute(classToCheck = RegistrationManager.class)
 public class Lesson3AUnitTest {
 
     private String message;

@@ -5,6 +5,9 @@
  */
 package com.ji.injector.exercise.enums.hard.parser;
 
+import com.ji.injector.headquarter.Exercise;
+import com.ji.injector.headquarter.ExerciseType;
+
 /**
  * ESERCIZIO 3.C Questa classe fornisce una serie di metodi per parsare e
  * scomporre stringhe secondo la seguente sintassi:
@@ -30,6 +33,7 @@ package com.ji.injector.exercise.enums.hard.parser;
  *
  * @author sommovir
  */
+@Exercise(name = "3C-PARSING", type = ExerciseType.AUTO, testEnabled = false)
 public class EsercizioParsing {
 
     /**
