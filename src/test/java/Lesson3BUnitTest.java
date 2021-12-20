@@ -10,7 +10,9 @@ import com.ji.injector.exercise.list.hard.bancomat.Bancomat;
 import com.ji.injector.exercise.list.hard.bancomat.Card;
 import com.ji.injector.exercise.list.hard.bancomat.Operation;
 import com.ji.injector.exercise.list.hard.bancomat.User;
+import com.ji.injector.exercise.string.easy.personcina.Personcina;
 import com.ji.injector.exercise.string.medium.account.RegistrationManager;
+import com.ji.injector.headquarter.ConditionToExecute;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
@@ -28,6 +30,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 
 @Disabled
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+@ConditionToExecute(classToCheck = Bancomat.class)
 public class Lesson3BUnitTest {
 
     private String message;

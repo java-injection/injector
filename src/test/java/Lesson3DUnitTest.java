@@ -9,6 +9,7 @@
 import com.ji.injector.exercise.enums.hard.parser.CommandType;
 import com.ji.injector.exercise.enums.hard.parser.EsercizioParsing;
 import com.ji.injector.exercise.string.medium.account.RegistrationManager;
+import com.ji.injector.headquarter.ConditionToExecute;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import static org.junit.jupiter.api.Assertions.assertFalse;

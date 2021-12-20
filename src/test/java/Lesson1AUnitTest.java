@@ -6,7 +6,9 @@
 
 
 
+import com.ji.injector.exercise.classes.easy.monster.Monster;
 import com.ji.injector.exercise.string.easy.password.PasswordManager;
+import com.ji.injector.headquarter.ConditionToExecute;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -20,6 +22,7 @@ import org.junit.jupiter.api.Disabled;
 
 @Disabled
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+@ConditionToExecute(classToCheck = PasswordManager.class)
 public class Lesson1AUnitTest {
 
     private String message;

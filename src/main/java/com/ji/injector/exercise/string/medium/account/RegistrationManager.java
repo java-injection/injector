@@ -5,6 +5,8 @@
  */
 package com.ji.injector.exercise.string.medium.account;
 
+import com.ji.injector.headquarter.Exercise;
+import com.ji.injector.headquarter.ExerciseType;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -15,6 +17,7 @@ import java.util.stream.Collectors;
  *
  * @author sommovir
  */
+@Exercise(name = "3A1-REG", type = ExerciseType.AUTO, testEnabled = false)
 public class RegistrationManager {
     
 

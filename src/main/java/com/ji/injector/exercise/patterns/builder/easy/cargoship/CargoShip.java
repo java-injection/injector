@@ -4,12 +4,15 @@
  */
 package com.ji.injector.exercise.patterns.builder.easy.cargoship;
 
+import com.ji.injector.headquarter.Exercise;
+import com.ji.injector.headquarter.ExerciseType;
 import java.util.Date;
 
 /**
  *
  * @author sommovir
  */
+@Exercise(name = "F3-CARGO", type = ExerciseType.FREE, testEnabled = false)
 public class CargoShip {
     
     private String name;  //Mandatory

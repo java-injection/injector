@@ -5,6 +5,8 @@
  */
 package com.ji.injector.exercise.list.hard.bancomat;
 
+import com.ji.injector.headquarter.Exercise;
+import com.ji.injector.headquarter.ExerciseType;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -25,6 +27,7 @@ import java.util.List;
  *
  * @author sommovir
  */
+@Exercise(name = "3B-BANCOMAT", type = ExerciseType.AUTO, testEnabled = false)
 public class Bancomat {
 
     private int fondo; //DO NOT REMOVE OR CHANGE
