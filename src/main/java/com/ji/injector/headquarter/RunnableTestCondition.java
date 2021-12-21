@@ -22,6 +22,11 @@ public class RunnableTestCondition implements ExecutionCondition {
 
         if (annotation.isPresent()) {
             Class<?> classToCheck = annotation.get().classToCheck();
+            InProgress inProgressAnn = classToCheck.getDeclaredAnnotation(InProgress.class);
+            String inProgressWargning = "";
+            if(inProgressAnn != null){
+                inProgressWargning = "[WARNING: exercise still IN PROGRESS]";
+            }
             Exercise executingTestAnn = classToCheck.getDeclaredAnnotation(Exercise.class);
             if (executingTestAnn != null) {
 
@@ -30,8 +35,7 @@ public class RunnableTestCondition implements ExecutionCondition {
                     System.out.println("+-----------------------------------------------------+");
                     return ConditionEvaluationResult.disabled("Test on class: " + context.getElement().toString() + " is DISABLED");
                 } else {
-                    System.out.println("Test on exercise:" + executingTestAnn.name() + " is [ENABLED]");
-                    System.out.println("+-----------------------------------------------------+");
+                    System.out.println("Test on exercise:" + executingTestAnn.name() + " is [ENABLED]"+inProgressWargning+"\n");
                     return ConditionEvaluationResult.enabled("Test on class: " + context.getElement().toString() + " is ENABLED");
                 }
 
