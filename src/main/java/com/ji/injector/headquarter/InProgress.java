@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
  *
  * @author sommovir
  */
-@Retention(RetentionPolicy.SOURCE)
+@Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 public @interface InProgress {
     
