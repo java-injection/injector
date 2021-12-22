@@ -21,7 +21,6 @@ import org.junit.jupiter.api.TestMethodOrder;
  *
  * @author sommovir
  */
-//@Disabled
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 @ConditionToExecute(classToCheck = Book.class)
 public class Lesson2UnitTest {

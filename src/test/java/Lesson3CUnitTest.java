@@ -24,7 +24,7 @@ import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.api.Disabled;
 
-@Disabled
+
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 @ConditionToExecute(classToCheck = EsercizioParsing.class)
 public class Lesson3CUnitTest {

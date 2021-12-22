@@ -28,7 +28,7 @@ import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.api.Disabled;
 
-@Disabled
+
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 @ConditionToExecute(classToCheck = Table.class)
 public class LessonF1AUnitTest {
@@ -48,7 +48,7 @@ public class LessonF1AUnitTest {
     private static final String BREAKLINE = "\n---------------------------------------------------------------------------------------------------";
 
     static {
-        Exercise annotation = Monster.class.getAnnotation(Exercise.class);
+        Exercise annotation = Table.class.getAnnotation(Exercise.class);
         title = annotation == null ? UNKNOWN_EXERCIZE : annotation.name();
     }
 
@@ -181,7 +181,7 @@ public class LessonF1AUnitTest {
     public void test3a(TestInfo info) {
 
         message = "[" + title + "]" + info.getDisplayName();
-        result = "\t[FAIL]";
+        result = "\t\t[FAIL]";
         try {
             Field fieldName = Table.class.getDeclaredField("height");
             Assertions.assertNotNull(fieldName);
@@ -193,7 +193,7 @@ public class LessonF1AUnitTest {
             return;
         }
 
-        result = "\t[SUCCESS][+2.0]";
+        result = "\t\t[SUCCESS][+2.0]";
         vote += 2.0f;
     }
 
@@ -456,7 +456,7 @@ public class LessonF1AUnitTest {
     public void test6A(TestInfo info) {
 
         message = "[" + title + "]" + info.getDisplayName();
-        result = "\t[FAIL]";
+        result = "\t\t[FAIL]";
         try {
             Method changeName = Table.class.getDeclaredMethod("changeName", String.class);
             Assertions.assertNotNull(changeName);
@@ -472,7 +472,7 @@ public class LessonF1AUnitTest {
             return;
         }
 
-        result = "\t[SUCCESS][+1.0]";
+        result = "\t\t[SUCCESS][+1.0]";
         vote += 1.0f;
     }
 

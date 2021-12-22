@@ -24,7 +24,7 @@ import org.junit.jupiter.api.TestMethodOrder;
  *
  * @author sommovir
  */
-@Disabled
+
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 @ConditionToExecute(classToCheck = Personcina.class)
 public class Lesson3BASICUnitTest {
