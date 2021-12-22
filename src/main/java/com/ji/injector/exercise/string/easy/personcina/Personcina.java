@@ -5,6 +5,10 @@
  */
 package com.ji.injector.exercise.string.easy.personcina;
 
+import com.ji.injector.headquarter.Exercise;
+import com.ji.injector.headquarter.ExerciseType;
+import com.ji.injector.headquarter.InProgress;
+
 /**
  * 3BASIC-0 1. Si completi l'incapsulamento della classe facendo in modo che la
  * classe non permetta di inserire nei campi 'name' e 'surname' valori nulli o
@@ -21,6 +25,8 @@ package com.ji.injector.exercise.string.easy.personcina;
  *
  * @author sommovir
  */
+@Exercise(name = "B0-PERS", type = ExerciseType.AUTO, testEnabled = true)
+@InProgress 
 public class Personcina {
 
     private String name;

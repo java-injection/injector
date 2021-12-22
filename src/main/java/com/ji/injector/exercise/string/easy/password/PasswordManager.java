@@ -17,7 +17,7 @@ import com.ji.injector.headquarter.ExerciseType;
  *
  * @author Luca
  */
-@Exercise(name = "1A-PASSWORD", type = ExerciseType.AUTO, testEnabled = true)
+@Exercise(name = "1A-PASSWORD", type = ExerciseType.AUTO, testEnabled = false)
 public class PasswordManager {
 
     private static final String correctPassword = "antisgamo";
