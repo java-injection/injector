@@ -28,7 +28,7 @@ import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.api.Disabled;
 
-//@Disabled
+@Disabled
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 @ConditionToExecute(classToCheck = Table.class)
 public class LessonF1AUnitTest {

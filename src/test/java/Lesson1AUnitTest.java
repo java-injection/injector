@@ -20,7 +20,7 @@ import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.api.Disabled;
 
-@Disabled
+//@Disabled
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 @ConditionToExecute(classToCheck = PasswordManager.class)
 public class Lesson1AUnitTest {

@@ -20,7 +20,7 @@ import com.ji.injector.headquarter.ExerciseType;
  *
  * @author Luca
  */
-@Exercise(name = "2.A-BOOK", type = ExerciseType.AUTO, testEnabled = true)
+@Exercise(name = "2.A-BOOK", type = ExerciseType.AUTO, testEnabled = false)
 public class Book {
 
     private String title;
