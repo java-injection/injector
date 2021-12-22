@@ -21,7 +21,7 @@ import com.ji.injector.headquarter.InProgress;
  *
  * @author sommovir
  */
-@Exercise(name = "F.1-TABLE", type = ExerciseType.FREE, testEnabled = true)
+@Exercise(name = "F.1-TABLE", type = ExerciseType.FREE, testEnabled = false)
 public class Table {
 
 }

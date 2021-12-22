@@ -7,6 +7,7 @@ package com.ji.injector.exercise.string.easy.personcina;
 
 import com.ji.injector.headquarter.Exercise;
 import com.ji.injector.headquarter.ExerciseType;
+import com.ji.injector.headquarter.InProgress;
 
 /**
  * 3BASIC-0 1. Si completi l'incapsulamento della classe facendo in modo che la
