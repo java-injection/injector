@@ -5,41 +5,43 @@
  */
 package com.ji.injector.exercise.string.easy.personcina;
 
-import com.ji.injector.headquarter.Exercise;
-import com.ji.injector.headquarter.ExerciseType;
-
 /**
  * 3BASIC-0 1. Si completi l'incapsulamento della classe facendo in modo che la
  * classe non permetta di inserire nei campi 'name' e 'surname' valori nulli o
  * vuoti. In tal caso i valori di default siano "NO_NAME" e "NO_SURNAME". Nessun
  * controllo viene fatto invece sull'attributo 'postapay' in fase di costruzione
- * o inserimento. 2. Oltre ai controlli del punto 1, si dovrà verificare che il
+ * o inserimento. 
+ * 2. Oltre ai controlli del punto 1, si dovrà verificare che il
  * nome e il cognome inizino con la lettera maiuscola e non contengano numeri.
- * (suggerimento: si può generare un nuovo metodo ad hoc) 3. Si completi il
+ * (suggerimento: si può generare un nuovo metodo ad hoc) 
+ * 3. Si completi il
  * metodo 'needsToBePayed' come descritto sopra la signature
+ * 
+ * ATTIVARE TEST: Lesson3BASICUnitTest
  *
  * @author sommovir
  */
-@Exercise(name = "B0-PERS", type = ExerciseType.AUTO, testEnabled = false)
 public class Personcina {
 
     private String name;
     private String surname;
     private int dayOfWork;
     private String postapay;
+    public final static String NO_NAME = "NO_NAME";
+    public final static String NO_SURNAME = "NO_SURNAME";
 
     public Personcina() {
+        
+        name = NO_NAME;
+        surname = NO_SURNAME;
     }
 
     public Personcina(String name, String surname, int dayOfWork, String postapay) {
-        this.name = name;
-        this.surname = surname;
+        setName(name);
+        setSurname(surname);
         this.dayOfWork = dayOfWork;
         this.postapay = postapay;
-        }
-        
-    
-    
+    }
 
     /**
      * 3BASIC-1 Restituisce true se il postapay inserito è valido, false
@@ -50,7 +52,13 @@ public class Personcina {
      * @return
      */
     public boolean isPostaPayValid() {
-        return true;
+        
+        if(postapay != null && postapay != "" && postapay.matches("\\b[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}\\b")){
+            return true;
+        }
+            
+            return false;
+
     }
 
     /**
@@ -60,23 +68,48 @@ public class Personcina {
      * @return
      */
     public boolean needsToBePayed() {
+        
+        
+        if(dayOfWork >= 20 && isPostaPayValid()){
+            
+            return true;
+            
+        }
+        
         return false;
+        
     }
 
     public String getName() {
-        return null;
+        
+        return this.name;
+        
     }
 
     public void setName(String name) {
-        name = name;
+
+        if (name == null || name.isEmpty() || !attMatch(name)) {
+           
+            name = NO_NAME;
+            
+        }
+
+        this.name = name;
     }
 
     public String getSurname() {
-        return "nonzo";
+        return this.surname;
     }
 
     public void setSurname(String surname) {
 
+        if (surname == null || surname.isEmpty() || !attMatch(surname)){
+            
+            surname = NO_SURNAME;
+            
+        }
+
+        this.surname = surname;
     }
 
     public int getDayOfWork() {
@@ -84,15 +117,36 @@ public class Personcina {
     }
 
     public void setDayOfWork(int dayOfWork) {
-
+        this.dayOfWork = dayOfWork;
     }
 
     public String getPostapay() {
-        return "1";
+        return this.postapay;
     }
 
     public void setPostapay(String postapay) {
-
+        
+        if(isPostaPayValid() || needsToBePayed()){
+            
+            this.postapay = postapay;
+        }
+        
+        
+        
+        
     }
-
+    
+    
+    public boolean attMatch(String stringa){
+        
+        if(stringa.matches("\\b[A-Z]{1}[a-z]*\\b")){
+            
+            return true;
+            
+        }
+        
+        return false;
+        
+    }
+    
 }
