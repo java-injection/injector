@@ -72,11 +72,11 @@ public class Lesson3TUTORUnitTest {
     @DisplayName("[Test Incaps.](1/3) Easy: 3.TUTOR.0 cotruttore vuoto")
     public void test1(TestInfo info) {
         message = info.getDisplayName();
-        result = "\t\t\t\t\t[MISERY]";
+        result = "\t\t\t\t\t\t[MISERY]";
         MilitaryOrder o = new MilitaryOrder();
         assertEquals(INVALID, o.getCommander(), "Ho usato il costruttore vuoto ma il valore commander non risulta inizializzato");
         assertEquals(INVALID, o.getOrder(), "Ho usato il costruttore vuoto ma il valore order non risulta inizializzato");
-        result = "\t\t\t\t\t[SUCCESS][+2]";
+        result = "\t\t\t\t\t\t[SUCCESS][+2]";
         vote += 2f;
     }
 
@@ -84,14 +84,14 @@ public class Lesson3TUTORUnitTest {
     @DisplayName("[Test Incaps.](2/3) Easy: 3.TUTOR.0 cotruttore con argomenti (null,null) / empty")
     public void test2(TestInfo info) {
         message = info.getDisplayName();
-        result = "\t[DISGRACE]";
+        result = "\t\t[DISGRACE]";
         MilitaryOrder o = new MilitaryOrder(null, null);
         assertEquals(INVALID, o.getCommander(), "Ho usato il costruttore con argomenti, ho passato null a commander ma il getter non mi dice che è INVALID");
         assertEquals(INVALID, o.getOrder(), "Ho usato il costruttore con argomenti, ho passato null a order ma il getter non mi dice che è INVALID");
         MilitaryOrder o2 = new MilitaryOrder("", "");
         assertEquals(INVALID, o2.getCommander(), "Ho usato il costruttore con argomenti, ho passato -empty- a commander ma il getter non mi dice che è INVALID");
         assertEquals(INVALID, o2.getOrder(), "Ho usato il costruttore con argomenti, ho passato -empty- a order ma non mi il getter dice che è INVALID");
-        result = "\t[SUCCESS][+2]";
+        result = "\t\t[SUCCESS][+2]";
         vote += 2f;
     }
 
@@ -99,7 +99,7 @@ public class Lesson3TUTORUnitTest {
     @DisplayName("[Test Incaps.](3/3) Medium: 3.TUTOR.0 cotruttore con argomenti validi (ok,ok)")
     public void test3(TestInfo info) {
         message = info.getDisplayName();
-        result = "\t\t[FAIL]";
+        result = "\t\t\t[FAIL]";
         MilitaryOrder o = new MilitaryOrder("Ten. Strapponi", "8330hsijd9029dhNUC099nsadajsdja9");
         assertEquals("Ten. Strapponi", o.getCommander(), "Ho usato il costruttore con argomenti, ho passato valore valido [Ten. Strapponi] a commander ma mi dice che è INVALID");
         assertEquals("8330hsijd9029dhNUC099nsadajsdja9", o.getOrder(), "Ho usato il costruttore con argomenti, ho passato valore valido [8330hsijd9029dhNUC099nsadajsdja9] a order ma mi dice che è INVALID");
@@ -110,8 +110,8 @@ public class Lesson3TUTORUnitTest {
 
         MilitaryOrder o3 = new MilitaryOrder("Gen. Spugnonodrov", "moravi NUC 1a");
         assertEquals("Gen. Spugnonodrov", o3.getCommander(), "Ho usato il costruttore con argomenti, ho passato valore valido [Gen. Spugnonodrov] a commander ma mi dice che è INVALID");
-        assertEquals("moravi NUC 1a", o3.getOrder(), "Ho usato il costruttore con argomenti, ho passato valore valido [moravi NUC 1a] a order ma mi dice che è INVALID");
-        result = "\t\t[SUCCESS][+6]";
+        assertEquals(INVALID, o3.getOrder(), "Ho usato il costruttore con argomenti, ho passato valore valido [moravi NUC 1a] a order ma mi dice che è INVALID");
+        result = "\t\t\t[SUCCESS][+6]";
         vote += 6f;
     }
 
@@ -119,7 +119,7 @@ public class Lesson3TUTORUnitTest {
     @DisplayName("[Test Setters.](1/2) Easy: 3.TUTOR.0 setter nulli/vuoti")
     public void tes41(TestInfo info) {
         message = info.getDisplayName();
-        result = "\t\t\t[FAIL]";
+        result = "\t\t\t\t\t[FAIL]";
         MilitaryOrder o = new MilitaryOrder("Ten. Minchi", "sd892ujdasokdjNUC asiddajsidii");
         o.setOrder(null);
         o.setCommander(null);
@@ -132,7 +132,7 @@ public class Lesson3TUTORUnitTest {
         assertEquals(INVALID, o2.getCommander(), "Ho usato il setter passandogli una stringa vuota ma il valore commander non risulta INVALID");
         assertEquals(INVALID, o2.getOrder(), "Ho usato il setter passandogli unas tringa vuota ma il valore order non risulta INVALID");
 
-        result = "\t\t\t[SUCCESS][+3]";
+        result = "\t\t\t\t\t[SUCCESS][+3]";
         vote += 3f;
     }
 
@@ -140,14 +140,14 @@ public class Lesson3TUTORUnitTest {
     @DisplayName("[Test Setters.](2/2) Easy: 3.TUTOR.0 costruttore vuoto, setter validi")
     public void tes5(TestInfo info) {
         message = info.getDisplayName();
-        result = "\t\t[FAIL]";
+        result = "\t\t\t\t[FAIL]";
         MilitaryOrder o = new MilitaryOrder("", null);
         o.setOrder("8330hsijd9029dhNUC099nsadajsdja9");
         o.setCommander("Ten. Strapponi");
         assertEquals("Ten. Strapponi", o.getCommander(), "Ho usato il costruttore con argomenti invalidi, poi ho passato valore valido [Ten. Strapponi] a commander ma mi dice che è INVALID");
         assertEquals("8330hsijd9029dhNUC099nsadajsdja9", o.getOrder(), "Ho usato il costruttore con argomenti invalidi, poi ho passato valore valido [8330hsijd9029dhNUC099nsadajsdja9] a order ma mi dice che è INVALID");
 
-        result = "\t\t[SUCCESS][+3]";
+        result = "\t\t\t\t[SUCCESS][+3]";
         vote += 3f;
     }
 
@@ -155,7 +155,7 @@ public class Lesson3TUTORUnitTest {
     @DisplayName("[Test Invalids.](1/2) Medium: 3.TUTOR.0  - commander")
     public void tes6(TestInfo info) {
         message = info.getDisplayName();
-        result = "\t\t\t\t[FAIL]";
+        result = "\t\t\t\t\t\t[FAIL]";
         MilitaryOrder o = new MilitaryOrder("Gen. Pollo", null);
         MilitaryOrder o2 = new MilitaryOrder("Gen.Pollo", null);
         MilitaryOrder o3 = new MilitaryOrder("Gen. pollo", null);
@@ -176,7 +176,7 @@ public class Lesson3TUTORUnitTest {
         assertEquals(INVALID, o8.getCommander(), "Ho inserito un nome commander invalido, e mi hai deluso non dicendomi che è INVALID");
         assertEquals(INVALID, o9.getCommander(), "Ho inserito un nome commander invalido, e mi hai deluso non dicendomi che è INVALID");
 
-        result = "\t\t\t\t[SUCCESS][+6]";
+        result = "\t\t\t\t\t\t[SUCCESS][+6]";
         vote += 6f;
     }
 
@@ -184,7 +184,7 @@ public class Lesson3TUTORUnitTest {
     @DisplayName("[Test Invalids.](2/2) HARD: 3.TUTOR.0  - commander")
     public void tes7(TestInfo info) {
         message = info.getDisplayName();
-        result = "\t\t\t\t[FAIL]";
+        result = "\t\t\t\t\t\t[FAIL]";
         MilitaryOrder o = new MilitaryOrder(null, ".");
         MilitaryOrder o2 = new MilitaryOrder(null, "8ashjdasd9asid");
         MilitaryOrder o3 = new MilitaryOrder(null, "NUC");
@@ -203,7 +203,7 @@ public class Lesson3TUTORUnitTest {
         assertEquals(INVALID, o7.getCommander(), "Ho inserito un order invalido, e mi hai deluso non dicendomi che è INVALID");
         assertEquals(INVALID, o8.getCommander(), "Ho inserito un order invalido, e mi hai deluso non dicendomi che è INVALID");
 
-        result = "\t\t\t\t[SUCCESS][+4]";
+        result = "\t\t\t\t\t\t[SUCCESS][+4]";
         vote += 4f;
     }
 
@@ -211,7 +211,7 @@ public class Lesson3TUTORUnitTest {
     @DisplayName("[Test Methods](1/2) HARD: 3.TUTOR.3  - isLaunchOrder")
     public void tes8(TestInfo info) {
         message = info.getDisplayName();
-        result = "\t\t\t\t[FAIL]";
+        result = "\t\t\t\t\t\t\t[FAIL]";
         String launchCode = "alphaNUCaaaa";
         MilitaryOrder o = new MilitaryOrder(null, launchCode);
         boolean launchOrder = o.isLaunchOrder();
@@ -238,7 +238,7 @@ public class Lesson3TUTORUnitTest {
         assertFalse(launchOrder4, "Ho inserito un codice di ripristino: [" + launchCode4 + "] ma non è stato riconosciuto correttamente");
         assertFalse(launchOrder5, "Ho inserito un codice di ripristino: [" + launchCode5 + "] ma non è stato riconosciuto correttamente");
 
-        result = "\t\t\t[SUCCESS][+3]";
+        result = "\t\t\t\t\t\t[SUCCESS][+3]";
         vote += 3f;
     }
 
@@ -246,7 +246,7 @@ public class Lesson3TUTORUnitTest {
     @DisplayName("[Test Methods](2/2) EASY: 3.TUTOR.4  - isValid")
     public void tes9(TestInfo info) {
         message = info.getDisplayName();
-        result = "\t\t\t\t\t[FAIL]";
+        result = "\t\t\t\t\t\t\t\t[FAIL]";
         MilitaryOrder o = new MilitaryOrder(null, "aishdhACNUC29292");
         boolean valid = o.isValid();
 
@@ -264,7 +264,7 @@ public class Lesson3TUTORUnitTest {
         assertFalse(valid3, "commander valido, codice invalido... ma mi hai detto che è valido");
         assertFalse(valid4, "commander invalido, codice invalido... ma mi hai detto che è valido");
 
-        result = "\t\t\t\t\t[SUCCESS][+2]";
+        result = "\t\t\t\t\t\t\t[SUCCESS][+2]";
         vote += 2f;
     }
 
