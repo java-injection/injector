@@ -165,6 +165,11 @@ public class Lesson3TUTORUnitTest {
         MilitaryOrder o7 = new MilitaryOrder("Ten. Pollo2", null);
         MilitaryOrder o8 = new MilitaryOrder("Asc. aPollo", null);
         MilitaryOrder o9 = new MilitaryOrder("ten. Pollo", null);
+        MilitaryOrder o10 = new MilitaryOrder("Marco", null);
+        MilitaryOrder o11 = new MilitaryOrder("Ten.DPollo", null);
+        MilitaryOrder o12 = new MilitaryOrder("TenB Pollo", null);
+        MilitaryOrder o13 = new MilitaryOrder("GenB Pollo", null);
+        
 
         assertEquals("Gen. Pollo", o.getCommander(), "Ho inserito un nome commander valido, e mi hai deluso dicendomi che è INVALID");
         assertEquals(INVALID, o2.getCommander(), "Ho inserito un nome commander invalido, e mi hai deluso non dicendomi che è INVALID");
@@ -175,13 +180,17 @@ public class Lesson3TUTORUnitTest {
         assertEquals(INVALID, o7.getCommander(), "Ho inserito un nome commander invalido, e mi hai deluso non dicendomi che è INVALID");
         assertEquals(INVALID, o8.getCommander(), "Ho inserito un nome commander invalido, e mi hai deluso non dicendomi che è INVALID");
         assertEquals(INVALID, o9.getCommander(), "Ho inserito un nome commander invalido, e mi hai deluso non dicendomi che è INVALID");
-
+        assertEquals(INVALID, o10.getCommander(), "Ho inserito un nome commander invalido, e mi hai deluso non dicendomi che è INVALID");
+        assertEquals(INVALID, o11.getCommander(), "Ho inserito un nome commander invalido, e mi hai deluso non dicendomi che è INVALID");
+        assertEquals(INVALID, o12.getCommander(), "Ho inserito un nome commander invalido, e mi hai deluso non dicendomi che è INVALID");
+        assertEquals(INVALID, o13.getCommander(), "Ho inserito un nome commander invalido, e mi hai deluso non dicendomi che è INVALID");
+        
         result = "\t\t\t\t\t\t[SUCCESS][+6]";
         vote += 6f;
     }
 
     @Test
-    @DisplayName("[Test Invalids.](2/2) HARD: 3.TUTOR.0  - commander")
+    @DisplayName("[Test Invalids.](2/2) HARD: 3.TUTOR.0  - order")
     public void tes7(TestInfo info) {
         message = info.getDisplayName();
         result = "\t\t\t\t\t\t[FAIL]";
@@ -194,14 +203,14 @@ public class Lesson3TUTORUnitTest {
         MilitaryOrder o7 = new MilitaryOrder(null, "nuca");
         MilitaryOrder o8 = new MilitaryOrder(null, "---3ueuhfajdf");
 
-        assertEquals(INVALID, o.getCommander(), "Ho inserito un order invalido, e mi hai deluso non dicendomi che è INVALID");
-        assertEquals(INVALID, o2.getCommander(), "Ho inserito un order invalido, e mi hai deluso non dicendomi che è INVALID");
-        assertEquals(INVALID, o3.getCommander(), "Ho inserito un order invalido, e mi hai deluso non dicendomi che è INVALID");
-        assertEquals(INVALID, o4.getCommander(), "Ho inserito un order invalido, e mi hai deluso non dicendomi che è INVALID");
-        assertEquals(INVALID, o5.getCommander(), "Ho inserito un order invalido, e mi hai deluso non dicendomi che è INVALID");
-        assertEquals(INVALID, o6.getCommander(), "Ho inserito un order invalido, e mi hai deluso non dicendomi che è INVALID");
-        assertEquals(INVALID, o7.getCommander(), "Ho inserito un order invalido, e mi hai deluso non dicendomi che è INVALID");
-        assertEquals(INVALID, o8.getCommander(), "Ho inserito un order invalido, e mi hai deluso non dicendomi che è INVALID");
+        assertEquals(INVALID, o.getOrder(), "Ho inserito un order invalido, e mi hai deluso non dicendomi che è INVALID");
+        assertEquals(INVALID, o2.getOrder(), "Ho inserito un order invalido, e mi hai deluso non dicendomi che è INVALID");
+        assertEquals(INVALID, o3.getOrder(), "Ho inserito un order invalido, e mi hai deluso non dicendomi che è INVALID");
+        assertEquals(INVALID, o4.getOrder(), "Ho inserito un order invalido, e mi hai deluso non dicendomi che è INVALID");
+        assertEquals(INVALID, o5.getOrder(), "Ho inserito un order invalido, e mi hai deluso non dicendomi che è INVALID");
+        assertEquals(INVALID, o6.getOrder(), "Ho inserito un order invalido, e mi hai deluso non dicendomi che è INVALID");
+        assertEquals(INVALID, o7.getOrder(), "Ho inserito un order invalido, e mi hai deluso non dicendomi che è INVALID");
+        assertEquals(INVALID, o8.getOrder(), "Ho inserito un order invalido, e mi hai deluso non dicendomi che è INVALID");
 
         result = "\t\t\t\t\t\t[SUCCESS][+4]";
         vote += 4f;
