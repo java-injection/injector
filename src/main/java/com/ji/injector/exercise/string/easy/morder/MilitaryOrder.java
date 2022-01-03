@@ -60,7 +60,7 @@ public class MilitaryOrder {
      * un codice di lancio viceversa sarà un codice di ripristino (false).
      */
     public boolean isLaunchOrder() {
-       if(order.matches("[A-Za-z0-9]+[NUC].[0-9]{3}[A-Za-z0-9]+")){
+       if(order.matches("[A-Za-z0-9]+[NUC][0-9]{3}[A-Za-z0-9]+")){
            return false;
        }
        return true;
@@ -80,7 +80,7 @@ public class MilitaryOrder {
 
     public void setCommander(String commander) {
 
-        if (commander != null && commander.matches("\\b((Ten.|Gen.).)?[A-Z]{1}[a-z]+\\b") && !commander.isEmpty()) {
+        if (commander != null && commander.matches("\\b((Ten\\.|Gen\\.)\\s)[A-Z]{1}[a-z]+\\b") && !commander.isEmpty()) {
             
             this.commander = commander;
             
@@ -98,7 +98,7 @@ public class MilitaryOrder {
 
     public void setOrder(String order) {
 
-        if (order != null && order.matches("[A-Za-z0-9]+[NUC].[A-Za-z0-9]+") && !order.isEmpty()) {
+        if (order != null && order.matches("[A-Za-z0-9]*NUC[A-Za-z0-9]{3,}") && !order.isEmpty()) {
             this.order = order;
         } else {
             this.order = INVALID;
