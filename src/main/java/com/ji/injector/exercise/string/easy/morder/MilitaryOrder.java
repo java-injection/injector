@@ -60,7 +60,7 @@ public class MilitaryOrder {
      * un codice di lancio viceversa sarà un codice di ripristino (false).
      */
     public boolean isLaunchOrder() {
-       if(order.matches("[A-Za-z0-9]+[NUC][0-9]{3}[A-Za-z0-9]+")){
+       if(order.matches("[A-Za-z0-9]*[NUC][0-9]{3}[A-Za-z0-9]*")){
            return false;
        }
        return true;
