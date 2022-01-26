@@ -58,7 +58,11 @@ public class Scarpa {
     public void setTipoScarpa(TipoScarpa tipoScarpa) {
         this.tipoScarpa = tipoScarpa;
     }
-   
-    
-    
+
+    @Override
+    public String toString() {
+        return "Scarpa{" + "modello=" + modello + ", costo=" + costo + ", numero=" + numero + ", tipoScarpa=" + tipoScarpa + '}';
+    }
+
+
 }

@@ -4,6 +4,8 @@
  */
 package com.ji.injector.exercise.list.free.esercizio2;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -67,6 +69,16 @@ public class Negozio {
             this.scaffaleLaterale.add(scarpa);
         }
     }
+
+    public List<Scarpa> getScaffaleCentrale() {
+        return new ArrayList<Scarpa>(scaffaleCentrale);
+    }
+
+    public List<Scarpa> getScaffaleLaterale() {
+       return new ArrayList<Scarpa>(scaffaleLaterale);
+    }
+    
+    
     
       
 
